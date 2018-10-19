@@ -5,7 +5,7 @@ import os
 # print(cwd)
 
 
-def isCSVFileValid(obj):
+def iscsvfilevalid(obj):
     if obj is None:
         print("This file is not valid.")
         exit(1)
@@ -19,7 +19,7 @@ file = open(filename, 'r')
 
 for line in file:
     isMatchingObj = re.match(r'.*;\d*;\d*', line)
-    isCSVFileValid(isMatchingObj)
+    iscsvfilevalid(isMatchingObj)
 file.close()
 
 
