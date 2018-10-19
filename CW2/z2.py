@@ -18,7 +18,7 @@ filename = input("Enter name of the file to validate: ")
 file = open(filename, 'r')
 
 for line in file:
-    isMatchingObj = re.match(r'.*;\d*;\d*', line)
+    isMatchingObj = re.match(r'.+;\d+;\d+', line)
     iscsvfilevalid(isMatchingObj)
 file.close()
 
