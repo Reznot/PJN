@@ -14,7 +14,7 @@ def iscsvfilevalid(obj):
         exit(0)
 
 
-filename = input("Enter name of the file to validate")
+filename = input("Enter name of the file to validate: ")
 file = open(filename, 'r')
 
 for line in file:
