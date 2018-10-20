@@ -10,6 +10,7 @@ with open(in_filename) as in_file:   #alternative to in_file = open(filename, 'r
             out_file.write(str(isMatchingObj.group()) + '\n')
 print("File with emails has been created")
 in_file.close()
+
 out_file.close()
 
 
