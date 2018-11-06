@@ -10,6 +10,7 @@ cat<plik.txt|head -123|tail -1
 cat|head -20| tail -11
 
 5:
+cat|egrep -o 'sz|cz'|wc -w
 
 6:
 sed 's/[ążźćęłóńśĄŻŹĆÓŁĘŃŚ]/'X'/g'
