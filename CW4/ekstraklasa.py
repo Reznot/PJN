@@ -49,10 +49,10 @@ for i in range(2008,2018):
     clr_points_table = clear_points_table(points_tables_td)
     create_ranking(team_tables_td, clr_points_table)
 
-    print(team_list)
-    print(clr_points_table)
-    print(points_list)
-    print(i)
+    # print(team_list)
+    # print(clr_points_table)
+    # print(points_list)
+    # print(i)
 
 
 if (len(team_list) == len(points_list)):
