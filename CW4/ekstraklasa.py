@@ -23,7 +23,6 @@ def clear_points_table(points_tables_td):
         isMatchingObj = re.search(r"\d+", b.string)
         if isMatchingObj is not None:
             tmp_points_list.append(b.string)
-            print(b.string)
     return tmp_points_list
 
 def merge_lists(team_list, points_list):
