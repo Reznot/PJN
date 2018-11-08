@@ -5,6 +5,7 @@ import urllib.request
 team_list = []
 points_list = []
 
+
 def create_ranking(team_tables_td, clr_points_table):
     for td in team_tables_td:
         if td.a.string in team_list:
