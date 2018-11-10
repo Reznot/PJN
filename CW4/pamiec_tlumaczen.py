@@ -1,6 +1,9 @@
 from bs4 import BeautifulSoup
 import urllib.request
 import re
+import nltk
+
+nltk.download('punkt')
 
 
 polish_sources = ['http://rjawor.home.amu.edu.pl/index.php', 'http://rjawor.home.amu.edu.pl/science.php', 'http://rjawor.home.amu.edu.pl/relax.php',
@@ -10,6 +13,8 @@ english_sources = ['http://rjawor.home.amu.edu.pl/index_en.php', 'http://rjawor.
 
 pl_ver = open('rjawor_pl.txt', 'w+')
 en_ver = open('rjawor_en.txt', 'w+')
+tokenized_pl = open('tokenized_pl.txt', 'w+')
+tokenized_en = open('tokenized_en.txt', 'w+')
 
 
 def download_src(source):
@@ -22,11 +27,22 @@ def download_src(source):
     return page_source
 
 
+def tokenize_into_sent(text, fd):
+    sent_text = nltk.sent_tokenize(text)
+    for sent in sent_text:
+        fd.write("{}\n".format(sent))
+
+
 pl_text = download_src(polish_sources)
 pl_ver.write(pl_text)
 
 en_text = download_src(english_sources)
 en_ver.write(en_text)
 
+tokenize_into_sent(pl_text, tokenized_pl)
+tokenize_into_sent(en_text, tokenized_en)
+
 pl_ver.close()
 en_ver.close()
+tokenized_pl.close()
+tokenized_en.close()
